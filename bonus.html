@@ -12,40 +12,53 @@
             background-color: #ffe6f2;
             color: #333;
         }
-        nav {
-            background-color: #ffb3d9;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        nav a {
-            background-color: white;
-            color: #cc0052;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border-radius: 20px;
-            border: 2px solid #cc0052;
-            transition: all 0.3s ease;
-        }
-        nav a:hover {
-            background-color: #cc0052;
-            color: white;
-            transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-       nav a:not(:last-child) {
-    margin-bottom: 10px;
+       /* Style général pour la navigation */
+nav {
+    background-color: #ffb3d9;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux boutons de passer sur plusieurs lignes si nécessaire */
+    justify-content: center; /* Centre les boutons horizontalement */
+    gap: 10px; /* Ajoute de l'espace entre les boutons */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre subtile */
 }
 
-        @media (max-width: 600px) {
+/* Style des boutons */
+nav a {
+    background-color: white;
+    color: #cc0052;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 2px solid #cc0052;
+    transition: all 0.3s ease; /* Ajoute un effet de transition au survol */
+    text-align: center;
+    white-space: nowrap; /* Empêche la coupure des textes */
+    flex-grow: 1; /* Permet aux boutons de s'étirer uniformément */
+    max-width: 150px; /* Limite la largeur des boutons */
+}
+
+/* Effet au survol */
+nav a:hover {
+    background-color: #cc0052;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour les petits écrans */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Place les boutons verticalement */
+        align-items: center; /* Centre les boutons */
+    }
     nav a {
-        font-size: 14px; /* Réduit la taille de la police sur mobile */
-        padding: 8px 12px; /* Réduit la taille des boutons */
+        width: 90%; /* Les boutons prennent presque toute la largeur sur mobile */
+        max-width: none; /* Supprime la limite de largeur */
     }
 }
+
         header {
             background-color: #ffb3d9;
             color: white;
